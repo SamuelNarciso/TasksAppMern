@@ -1,10 +1,9 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const port = process.env.PORT || 5000 ;
-
 const router = require("./routes/taskRoutes");
-
 const app = express();
+
 
 // Metodo get mas simple: app.get("ruta",(req,res)=>{ ... }) Recibe una ruta y una callback req,res
 // app.get("/api/tasks", (req,res)=>{ 

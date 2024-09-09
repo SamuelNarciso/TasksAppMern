@@ -3,12 +3,18 @@ const getTask = (req,res)=>{
 }
 
 const putTask = (req, res) =>{
+    const id = req.params.id
     res.status(200).json({message: "Se actualizó la tarea desde el controlador"});
 }
 
 const postTask = (req,res)=>{
-    const id = req.params.id
-    res.status(200).json({message: `Se actualizó la tarea ${id} desde el controlador`});
+  
+    if(!req.body.text){
+        res.status(400)
+        throw new Error ( "Por favor, ingresa una tarea")
+    }else{
+        res.status(200).json({message: `Se creó la tarea`});
+    }
 }
 
 const delTask =(req,res)=>{

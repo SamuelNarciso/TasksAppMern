@@ -10,9 +10,9 @@ router.get("/", (req,res)=>{
 
 router.get("/", getTask )
 
-router.put("/", putTask )
+router.put("/:id", putTask )
 
-router.post("/:id", postTask)
+router.post("/", postTask)
 
 router.delete("/:id", delTask)
 
